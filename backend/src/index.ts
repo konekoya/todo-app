@@ -20,16 +20,6 @@ app.use('/api/auth', authRoutes);
 app.use('/api/todos', todosRoutes);
 app.use('/api/user', userRoutes);
 
-// Serve static files in production
-if (process.env.NODE_ENV === 'production') {
-  const frontendPath = path.join(__dirname, '../../frontend/dist');
-  app.use(express.static(frontendPath));
-
-  app.get('*', (req, res) => {
-    res.sendFile(path.join(frontendPath, 'index.html'));
-  });
-}
-
 // Health check
 app.get('/api/health', (req, res) => {
   res.json({ status: 'ok' });
