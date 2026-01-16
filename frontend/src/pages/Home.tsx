@@ -15,7 +15,7 @@ const Home: React.FC = () => {
   const [isLoading, setIsLoading] = useState(true);
   const [showAddModal, setShowAddModal] = useState(false);
   const [newTodoTitle, setNewTodoTitle] = useState('');
-  const { logout, user } = useAuth();
+  const { logout } = useAuth();
 
   const fetchTodos = async () => {
     try {
